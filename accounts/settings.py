@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS=['localhost','.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS=['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
