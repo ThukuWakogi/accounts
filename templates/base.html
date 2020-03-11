@@ -1,0 +1,117 @@
+{% load static %}
+{%load humanize%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Accounts - Home</title>
+  <link rel="icon" href="{% static 'images/a.png' %}"  sizes="16x16">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/mdb.css' %}" >
+  {%block styles%}
+  {%endblock%}
+</head>
+
+<body>
+
+<!--Main Navigation-->
+<header>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light white z-depth-0 border-bottom border-dark pt-0 mt-0 pb-0 mb-0">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="mt-2 mb-2 waves-effect navbar-brand" href="{%url 'home'%}" >
+                <strong class="h4" >Accounts</strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <hr class="mt-0 " style="border-bottom: 1px solid #111">
+                <!-- Left -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    </li>
+                </ul>
+
+                <!-- Right -->
+                <ul class="navbar-nav">
+                    <li class="nav-item nav-link">
+                        <a href="" class="nav-link waves-effect"
+                        > About Us
+                        </a>
+                    </li>
+                    <li class="nav-item  nav-link">
+                        <a href="" class="nav-link waves-effect"
+                        > Services
+                        </a>
+                    </li>
+                    <li class="nav-item nav-link">
+                        <a href="" class="nav-link waves-effect"
+                        > Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main class="mt-5 pt-5 mb-5">
+{%block content%}
+{%endblock%}
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+<footer class="page-footer text-center font-small black mt-4">
+    <div class="pb-2 pt-2 border-top border-dark text-center" style="background-color:#fff;color:#111">
+        <i class="fa fa-phone fa-lg m-2 text-dark mr-3"></i> 0712345678
+        <i class="fa fa-envelope fa-lg m-2 text-dark ml-3"></i> email@accounts.com
+    </div>
+    <div class="pb-4 pt-4 " style="color:yellow;">
+        © <span id="year"></span> Copyright:
+        <a href="index.html" style="color:yellow;"> Accounts </a>
+    </div>
+</footer>
+<!--/.Footer-->
+
+<!-- SCRIPTS -->
+<script  src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{%static 'js/mdb.js'%}"></script>
+
+<!-- Initializations -->
+<script type="text/javascript">
+    new WOW().init();
+</script>
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+  {%block scripts%}
+  {%endblock%}
+</body>
+</html>
+
+
+
