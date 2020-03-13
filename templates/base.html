@@ -18,14 +18,13 @@
   <link rel="stylesheet" href="{% static 'css/mdb.css' %}" >
   {%block styles%}
   {%endblock%}
+
 </head>
-
 <body>
-
 <!--Main Navigation-->
 <header>
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light white z-depth-0 border-bottom border-dark pt-0 mt-0 pb-0 mb-0">
+    <nav class="navbar black fixed-top navbar-expand-lg navbar-expand-md navbar-expand-sm border-bottom border-warning  navbar-dark z-depth-0 pt-0 mt-0 pb-0 mb-0">
         <div class="container">
 
             <!-- Brand -->
@@ -41,7 +40,7 @@
 
             <!-- Links -->
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <hr class="mt-0 " style="border-bottom: 1px solid #111">
+                <hr class="mt-0 hr" style="border-bottom: 2px solid yellow">
                 <!-- Left -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -51,17 +50,17 @@
                 <!-- Right -->
                 <ul class="navbar-nav">
                     <li class="nav-item nav-link">
-                        <a href="" class="nav-link waves-effect"
+                        <a href="#about" class="nav-link waves-effect"
                         > About Us
                         </a>
                     </li>
                     <li class="nav-item  nav-link">
-                        <a href="" class="nav-link waves-effect"
+                        <a href="#services" class="nav-link waves-effect"
                         > Services
                         </a>
                     </li>
                     <li class="nav-item nav-link">
-                        <a href="" class="nav-link waves-effect"
+                        <a href="#contact" class="nav-link waves-effect"
                         > Contact Us
                         </a>
                     </li>
@@ -76,18 +75,14 @@
 <!--Main Navigation-->
 
 <!--Main layout-->
-<main class="mt-5 pt-5 mb-5">
+
 {%block content%}
 {%endblock%}
-</main>
+
 <!--Main layout-->
 
 <!--Footer-->
-<footer class="page-footer text-center font-small black mt-4">
-    <div class="pb-2 pt-2 border-top border-dark text-center" style="background-color:#fff;color:#111">
-        <i class="fa fa-phone fa-lg m-2 text-dark mr-3"></i> 0712345678
-        <i class="fa fa-envelope fa-lg m-2 text-dark ml-3"></i> email@accounts.com
-    </div>
+<footer class="page-footer text-center font-small black">
     <div class="pb-4 pt-4 " style="color:yellow;">
         © <span id="year"></span> Copyright:
         <a href="index.html" style="color:yellow;"> Accounts </a>

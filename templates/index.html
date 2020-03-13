@@ -1,14 +1,212 @@
 {%extends 'base.html'%}
+{%load static%}
 {%block styles%}
 <style>
+.hero {
+  color: white;
+  background-image: url("{%static 'images/accounts.jpg'%}");
+  background-position: 50% 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:50vh;
+}
+
+@media(min-width:841px){
+.about-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+}
+
+@media(max-width:840px){
+.about-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+}
+@media(min-width:841px){
+.services-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+}
+}
+
+@media (min-width:572px) and (max-width:840px){
+.services-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+}
+@media(max-width:571px){
+.services-grid{
+padding:10px;
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-gap: 10px;
+}
+}
+.form{
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-gap: 5px;
+}
+.map-container-5{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container-5 iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
 </style>
 {%endblock%}
 {%block content%}
-<div class="container " style="min-height:80vh">
+<div class="" style="min-height:90vh">
+    <main class="mt-5 ">
+    <div class="hero z-depth-1 d-flex justify-content-center ">
+        <div class="mask flex-center rgba-yellow-strong w-100">
+        <div class="my-auto rounded" style="max-height:200px">
+            <p class="h1 text-center bg-dark p-3 rounded-top">Accounts Site</p>
+            <p class="h6 text-dark text-center yellow p-3 rounded-bottom">Your choice platform for accounting related solutions</p>
+        </div>
+        </div>
+    </div>
+
+    <div id="about" class=" pb-5"></div>
+
+    <div class="container  mt-5  p-2" >
+        <p class="text-center h3 mb-4 font-weight-bold">About Us</p>
+
+        <div class=" about-grid mt-5">
+            <div class="text-center"><img src="{%static 'images/shop.svg'%}" class="w-75 "></div>
+            <div class=" my-auto" style="max-height:300px">
+                <p class="h4 font-weight-bold mt-4 mb-4">We help you take care of your business</p>
+                <p>We empower you with everything you need to know to take care of business. From sales and purchases to cash flow, VAT, and reporting, Accounts Site supports every step of your business processes.</p>
+            </div>
+        </div>
+
+        <div class=" about-grid mt-5 pt-5">
+            <div class=" my-auto" style="max-height:300px">
+            <p class="h4 font-weight-bold mt-4 mb-4">We help you understand your business</p>
+            <p >We help you to truly understand and manage your income and expenses. Track financial statements such as payrolls, payments, and invoicing. Everything is automated and in one perfect package.</p>
+            </div>
+            <div class="text-center"><img src="{%static 'images/und.svg'%}" class="w-75 "></div>
+        </div>
 
     </div>
+
+    <div id="services" class=" pb-5"></div>
+
+    <div class="container  mt-5  p-2">
+        <p class="text-center h3  pb-5 font-weight-bold">Our Services</p>
+        <div class="services-grid">
+        <div class="p-2 rounded border">
+            <div><img src="{%static 'images/calculator.svg'%}" class="w-100"></div>
+            <div>
+                <p class="h6 text-center">Accounting</p>
+            </div>
+        </div>
+
+        <div class="p-2 rounded border">
+            <div><img src="{%static 'images/calculator.svg'%}" class="w-100"></div>
+            <div>
+                <p class="h6 text-center">Accounting</p>
+            </div>
+        </div>
+
+        <div class="p-2 rounded border">
+            <div><img src="{%static 'images/calculator.svg'%}" class="w-100"></div>
+            <div>
+                <p class="h6 text-center">Accounting</p>
+            </div>
+        </div>
+
+        <div class="p-2 rounded border">
+            <div><img src="{%static 'images/calculator.svg'%}" class="w-100"></div>
+            <div>
+                <p class="h6 text-center">Accounting</p>
+            </div>
+        </div>
+
+        <div class="p-2 rounded border">
+            <div><img src="{%static 'images/calculator.svg'%}" class="w-100"></div>
+            <div>
+                <p class="h6 text-center">Accounting</p>
+            </div>
+        </div>
+
+        <div class="p-2 rounded border">
+            <div><img src="{%static 'images/calculator.svg'%}" class="w-100"></div>
+            <div>
+                <p class="h6 text-center">Accounting</p>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="contact" class="black pb-5  mt-5 border-top border-warning"></div>
+        <div class=" black ">
+        <p class="text-center h3 text-white pb-5 pt-5 font-weight-bold">Contact Us</p>
+            <div class="container contact-grid mx-auto" >
+                <div class="form ">
+                    <div class="contacts text-white">
+                        <p class="h5 mb-4">Contacts</p>
+                        <p><i class="fas fa-map-marker"></i> Location</p>
+                        <p><i class="fas fa-phone"></i> Telephone</p>
+                        <p><i class="fas fa-envelope"></i> Email</p>
+                        <p><i class="fab fa-facebook"></i> Facebook</p>
+                        <p><i class="fab fa-instagram"></i> Instagram</p>
+                    </div>
+                    <form  method="post">
+                        {%csrf_token%}
+                        <div class="form-row mb-3">
+                        <div class=" col-6">
+                            <input class="form-control" name="name" type="text" required placeholder="Name">
+                        </div>
+                        <div class=" col-6" >
+                            <input class="form-control" name="email" type="email" id="email" required placeholder="Email">
+                        </div>
+                        </div>
+                        <div class="form-row mb-3">
+                            <div class="col-12">
+                                <textarea placeholder="Write us a message..." name="message" id="message" rows="4" class="form-control" required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row ">
+                            <div class="col-12">
+                            <button class="btn btn-block yellow my-0 ml-0" type="submit"> Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="map-container-google-8" class="z-depth-1-half map-container-5" style="height: 300px">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7977.686571367218!2d36.801571!3d-1.266718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1740f08bd937%3A0x17df82314a4188d4!2sCentenary%20House%2C%20Ring%20Rd%20Westlands%20Ln%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1584022989385!5m2!1sen!2ske" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+</div>
 {%endblock%}
 {%block scripts%}
 <script>
+$("hero").css({ height: ($(window).height()/2) + "px" });
+
+$(window).on("resize", function() {
+  $(".hero").css({ height: ($(window).height()/2) + "px" });
+});
+
 </script>
 {%endblock%}
